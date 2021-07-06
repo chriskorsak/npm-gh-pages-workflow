@@ -6,7 +6,7 @@
 ``` 
 $ npm init -y
 ```
-This creates the file _package.json_
+This creates the file _package.json_ This is a configuration file that npm uses to save all project information.
 
 * In command line, Run:
 ```
@@ -23,7 +23,13 @@ This adds gh-pages package as a dependency to to _package.json_
     "deploy": "gh-pages -d dist"
   },
 ```
--d flag means the directory called dist (in this case). In essense it means you are running the gh-pages package on this directory.
+-d dist means the directory called dist (in this case). In essense it means you are running the gh-pages package using this directory.
+
+_sidenote: the package.json lists all dependencies and if you were to share this project with someone, they could navigate to the project folder in their terminal and run:_
+```
+npm install
+```
+_This would install all the dependencies that are listed in package.json. this is why you don't have to have git track the node_modules folder (see below)._
 
 ### Project file creation and git workflow
 * Create a _.gitignore_ file in project root folder and add _node_modules_ to this file. We don't need git to track this folder
@@ -56,6 +62,9 @@ Github A Record IPs:
 Type: CNAME
 Host: www
 Value: chriskorsak.github.io (don't include the repository name)
+
+#### A Record, CNAME Defined
+An a record (address record) maps a domain name to specific ip addresses. A CNAME (canonical name) maps one domain name to another. It can also map a subdomain like www.example.com to just example.com like in the steps above.
 
 
 
